@@ -82,7 +82,6 @@ ActiveRecord::Schema.define(version: 2021_04_12_061614) do
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
-    t.boolean "isVerified", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -98,6 +97,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_061614) do
     t.string "username"
     t.string "image"
     t.text "bio"
+    t.boolean "isVerified", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
