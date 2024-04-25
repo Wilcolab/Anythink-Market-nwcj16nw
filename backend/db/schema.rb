@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_04_12_061614) do
   end
 
   create_table "users", id: :serial, force: :cascade do |t|
+    t.boolean "isVerified", default: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
